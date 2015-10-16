@@ -1,0 +1,4 @@
+<metadata>
+
+  <attr path="/api/package[@name='com.baidu.mapapi']/class[@name='VersionInfo']/field[@name='VERSION_INFO']" name="name">VersionInfos</attr>
+</metadata>

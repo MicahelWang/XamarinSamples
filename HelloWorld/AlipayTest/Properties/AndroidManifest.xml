@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="AlipayTest.AlipayTest" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<application android:label="AlipayTest" android:icon="@drawable/msp_icon"></application>
+  A4:C8:6A:B4:6A:5D:F8:DC:70:21:33:39:57:C5:8C:FB:88:93:41:08:AlipayTest.AlipayTest
+</manifest>
