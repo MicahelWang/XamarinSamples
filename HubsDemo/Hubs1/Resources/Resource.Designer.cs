@@ -64,7 +64,7 @@ namespace Hubs1
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int MyButton = 2131099648;
+			public const int expandableListView1 = 2131099648;
 			
 			static Id()
 			{
@@ -100,6 +100,9 @@ namespace Hubs1
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
+			
+			// aapt resource value: 0x7f040002
+			public const int MainTitle = 2130968578;
 			
 			static String()
 			{
