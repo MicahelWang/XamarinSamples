@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -11,7 +12,7 @@ namespace Phoneword
     [Activity(Label = "Phoneword", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+      static readonly  List<string> PhoneNumbers=new List<string>();
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -21,14 +22,15 @@ namespace Phoneword
             SetContentView(Resource.Layout.Main);
 
 
-            EditText phoneNumberText = FindViewById<EditText>(Resource.Id.PhoneNumberText);
-            Button translateButton = FindViewById<Button>(Resource.Id.TransllateButton);
-            Button callButton = FindViewById<Button>(Resource.Id.CallButton);
+            var phoneNumberText = FindViewById<EditText>(Resource.Id.PhoneNumberText);
+            var translateButton = FindViewById<Button>(Resource.Id.TransllateButton);
+            var callButton = FindViewById<Button>(Resource.Id.CallButton);
+            var callHistoryButton = FindViewById<Button>(Resource.Id.CallHistoryButton);
             callButton.Enabled = false;
 
 
-            string translatedNumber = string.Empty;
-            translateButton.Click += (object sender, EventArgs args) =>
+            var translatedNumber = string.Empty;
+            translateButton.Click += (sender, args) =>
             {
                 translatedNumber = PhoneTranslator.ToNumber(phoneNumberText.Text);
                 if (String.IsNullOrWhiteSpace(translatedNumber))
@@ -41,10 +43,9 @@ namespace Phoneword
                     callButton.Text = "Call " + translatedNumber;
                     callButton.Enabled = true;
                 }
-
             };
 
-            callButton.Click += (s, e) =>
+            callButton.Click += delegate
             {
                 var callDialog = new AlertDialog.Builder(this);
 
@@ -52,6 +53,10 @@ namespace Phoneword
 
                 callDialog.SetNeutralButton("Call", delegate
                 {
+                    // 将电话加入到历史记录列表中
+                    PhoneNumbers.Add(translatedNumber);
+                    callHistoryButton.Enabled = true;
+
                     var callIntent = new Intent(Intent.ActionCall);
 
                     callIntent.SetData(Android.Net.Uri.Parse("tel:" + translatedNumber));
@@ -62,6 +67,15 @@ namespace Phoneword
                 callDialog.SetNegativeButton("Cancel", delegate { });
 
                 callDialog.Show();
+            };
+
+            callHistoryButton.Click += delegate
+            {
+
+                var intent = new Intent(this, typeof (CallHistoryActivity));
+
+                intent.PutStringArrayListExtra("phone_numbers", PhoneNumbers);
+                StartActivity(intent);
             };
         }
     }

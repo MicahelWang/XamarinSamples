@@ -66,6 +66,9 @@ namespace Phoneword
 			// aapt resource value: 0x7f060003
 			public const int CallButton = 2131099651;
 			
+			// aapt resource value: 0x7f060004
+			public const int CallHistoryButton = 2131099652;
+			
 			// aapt resource value: 0x7f060001
 			public const int PhoneNumberText = 2131099649;
 			
@@ -106,6 +109,9 @@ namespace Phoneword
 			
 			// aapt resource value: 0x7f040001
 			public const int ApplicationName = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int CallHistory = 2130968578;
 			
 			// aapt resource value: 0x7f040000
 			public const int Hello = 2130968576;
