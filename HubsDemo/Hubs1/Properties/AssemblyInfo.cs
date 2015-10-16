@@ -16,6 +16,9 @@ using Android.App;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 
+
+[assembly: MetaData("com.baidu.lbsapi.API_KEY",Value= "Yy9XdIG2LbOftSAEfIseLiXh")]
+
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
