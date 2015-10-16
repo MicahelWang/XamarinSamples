@@ -26,6 +26,10 @@ namespace HubsApp
 		
 		public static void UpdateIdValues()
 		{
+			global::Plugins.Resource.String.ApplicationName = global::HubsApp.Resource.String.ApplicationName;
+			global::Plugins.Resource.String.Hello = global::HubsApp.Resource.String.Hello;
+			global::Utils.Resource.String.ApplicationName = global::HubsApp.Resource.String.ApplicationName;
+			global::Utils.Resource.String.Hello = global::HubsApp.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -64,7 +68,16 @@ namespace HubsApp
 		{
 			
 			// aapt resource value: 0x7f060000
-			public const int MyButton = 2131099648;
+			public const int HotelListView = 2131099648;
+			
+			// aapt resource value: 0x7f060003
+			public const int itemText = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int itemTitle = 2131099650;
+			
+			// aapt resource value: 0x7f060001
+			public const int myListItem = 2131099649;
 			
 			static Id()
 			{
@@ -81,6 +94,9 @@ namespace HubsApp
 			
 			// aapt resource value: 0x7f030000
 			public const int Main = 2130903040;
+			
+			// aapt resource value: 0x7f030001
+			public const int my_listItem = 2130903041;
 			
 			static Layout()
 			{

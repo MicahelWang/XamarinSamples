@@ -67,6 +67,9 @@
     <None Include="GettingStarted.Xamarin" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
+    <AndroidResource Include="Resources\layout\my_listItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
@@ -79,6 +82,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AlipayApi\AlipayApi.csproj">
+      <Project>{fa17c3d0-051f-4ac0-8b3b-72877f3f0c6c}</Project>
+      <Name>AlipayApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BaiduMapApi\BaiduMapApi.csproj">
+      <Project>{11933ff1-a96a-49fa-95a0-5b2c681ec153}</Project>
+      <Name>BaiduMapApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\Plugins.csproj">
+      <Project>{42df9493-a340-44d6-a71d-17536171dbc9}</Project>
+      <Name>Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TencentApi\TencentApi.csproj">
+      <Project>{718262bc-d4aa-4bb9-909d-ab3d3b6eba1e}</Project>
+      <Name>TencentApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{a9f56d58-8aaa-4745-b55e-9ff9abb5f69a}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
