@@ -4,7 +4,7 @@ using System;
 namespace Utils
 {
 
-    public class HotelEntity : Java.IO.ISerializable
+    public class HotelEntity :Java.Lang.Object, Java.IO.ISerializable
     {
         private double R = 6371229;
         public string Name { get; set; }
@@ -12,16 +12,9 @@ namespace Utils
         public double Latitude { get; set; }
 
         public double Distance { get; set; }
+      
 
-        public IntPtr Handle
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
-        public void getDistance(double longt1, double lat1)
+        public void GetDistance(double longt1, double lat1)
         {
             double x, y, distance;
             x = (Longitude - longt1) * Math.PI * R
@@ -35,11 +28,6 @@ namespace Utils
         public override string ToString()
         {
             return string.Format("{0} {3}km({1}, {2})", Name, Longitude.ToString("0.0000"), Latitude.ToString("0.0000"), Distance.ToString("0.00"));
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -59,15 +59,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomAdapter.cs" />
+    <Compile Include="CustomScroollLister.cs" />
+    <Compile Include="DetailsActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyListView.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />
+    <AndroidNativeLibrary Include="libs\arm64-v8a\libBaiduMapSDK_v3_5_0_31.so" />
+    <AndroidNativeLibrary Include="libs\armeabi-v7a\libBaiduMapSDK_v3_5_0_31.so" />
+    <AndroidNativeLibrary Include="libs\armeabi\libBaiduMapSDK_v3_5_0_31.so" />
+    <AndroidNativeLibrary Include="libs\x86\libBaiduMapSDK_v3_5_0_31.so" />
+    <AndroidNativeLibrary Include="libs\x86_64\libBaiduMapSDK_v3_5_0_31.so" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\my_listItem.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Details.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
   </ItemGroup>
