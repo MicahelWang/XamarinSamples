@@ -8,7 +8,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Util;
 using Utils;
-using Com.Baidu.Mapapi;
 namespace HubsApp
 {
     [Activity(Label = "HubsApp", MainLauncher = true, Icon = "@drawable/icon")]
@@ -19,8 +18,7 @@ namespace HubsApp
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            SDKInitializer.Initialize(ApplicationContext);
+            
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 

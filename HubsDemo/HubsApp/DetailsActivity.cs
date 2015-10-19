@@ -11,8 +11,6 @@ using Android.Views;
 using Android.Widget;
 using Utils;
 
-using Com.Baidu.Mapapi;
-using Com.Baidu.Mapapi.Map;
 
 namespace HubsApp
 {
@@ -43,23 +41,23 @@ namespace HubsApp
             }
         }
 
-        protected MapView mapView = null;
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            mapView.OnDestroy();
-        }
+        //protected MapView mapView = null;
+        //protected override void OnDestroy()
+        //{
+        //    base.OnDestroy();
+        //    mapView.OnDestroy();
+        //}
 
-        protected override void OnResume()
-        {
-            base.OnResume();
-            mapView.OnResume();
-        }
+        //protected override void OnResume()
+        //{
+        //    base.OnResume();
+        //    mapView.OnResume();
+        //}
 
-        protected override void OnPause()
-        {
-            base.OnPause();
-            mapView.OnPause();
-        }
+        //protected override void OnPause()
+        //{
+        //    base.OnPause();
+        //    mapView.OnPause();
+        //}
     }
 }
