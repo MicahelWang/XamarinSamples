@@ -104,10 +104,6 @@
       <Project>{11933ff1-a96a-49fa-95a0-5b2c681ec153}</Project>
       <Name>BaiduMapApi</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Plugins\Plugins.csproj">
-      <Project>{42df9493-a340-44d6-a71d-17536171dbc9}</Project>
-      <Name>Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TencentApi\TencentApi.csproj">
       <Project>{718262bc-d4aa-4bb9-909d-ab3d3b6eba1e}</Project>
       <Name>TencentApi</Name>

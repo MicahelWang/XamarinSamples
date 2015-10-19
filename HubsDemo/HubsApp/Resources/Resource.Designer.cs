@@ -26,8 +26,6 @@ namespace HubsApp
 		
 		public static void UpdateIdValues()
 		{
-			global::Plugins.Resource.String.ApplicationName = global::HubsApp.Resource.String.ApplicationName;
-			global::Plugins.Resource.String.Hello = global::HubsApp.Resource.String.Hello;
 			global::Utils.Resource.String.ApplicationName = global::HubsApp.Resource.String.ApplicationName;
 			global::Utils.Resource.String.Hello = global::HubsApp.Resource.String.Hello;
 		}
