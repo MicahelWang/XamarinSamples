@@ -1,7 +1,6 @@
-
 using Android.Widget;
 
-namespace HubsApp
+namespace HubsApp.Utils
 {
     public class CustomScroollLister : Java.Lang.Object, AbsListView.IOnScrollListener
     {

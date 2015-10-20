@@ -65,20 +65,23 @@ namespace HubsApp
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f060004
+			public const int HotelListView = 2131099652;
+			
 			// aapt resource value: 0x7f060003
-			public const int HotelListView = 2131099651;
+			public const int bmapView = 2131099651;
+			
+			// aapt resource value: 0x7f060007
+			public const int itemText = 2131099655;
 			
 			// aapt resource value: 0x7f060006
-			public const int itemText = 2131099654;
-			
-			// aapt resource value: 0x7f060005
-			public const int itemTitle = 2131099653;
+			public const int itemTitle = 2131099654;
 			
 			// aapt resource value: 0x7f060000
 			public const int linearLayout1 = 2131099648;
 			
-			// aapt resource value: 0x7f060004
-			public const int myListItem = 2131099652;
+			// aapt resource value: 0x7f060005
+			public const int myListItem = 2131099653;
 			
 			// aapt resource value: 0x7f060002
 			public const int txtHotelCoordinate = 2131099650;

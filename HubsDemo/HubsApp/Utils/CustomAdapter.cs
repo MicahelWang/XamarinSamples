@@ -1,26 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Utils;
 using Object = Java.Lang.Object;
 
-namespace HubsApp
+
+namespace HubsApp.Utils
 {
     public class CustomAdapter : BaseAdapter
     {
 
-        private List<HotelEntity> _data; //数据  
-        private int _resource; //item的布局  
-        private Context _context;
+        private readonly List<HotelEntity> _data; //数据  
+        private readonly int _resource; //item的布局  
+        private readonly Context _context;
         private LayoutInflater _inflator;
         private TextView _titleTextView;
         private TextView _textTextView;

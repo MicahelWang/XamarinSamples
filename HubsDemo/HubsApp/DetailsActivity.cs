@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +9,18 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+
+using Com.Baidu.Mapapi.Map;
 using Utils;
 
 
 namespace HubsApp
 {
-    [Activity(Label = "¾ÆµêÏêÇé")]
+    [Activity(Label = "é…’åº—è¯¦æƒ…")]
     public class DetailsActivity : Activity
     {
+
+        protected MapView _mapView = null;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -24,6 +28,7 @@ namespace HubsApp
             // Create your application here
             try
             {
+                _mapView = FindViewById<MapView>(Resource.Id.bmapView);
                 //var hotelEntity =(HotelEntity) Intent.GetSerializableExtra("HOTELENTITY");
                 var name = Intent.GetStringExtra("Name");
                 var latitude = Intent.GetDoubleExtra("Latitude", 0.00);
@@ -41,23 +46,23 @@ namespace HubsApp
             }
         }
 
-        //protected MapView mapView = null;
-        //protected override void OnDestroy()
-        //{
-        //    base.OnDestroy();
-        //    mapView.OnDestroy();
-        //}
+       
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            _mapView.OnDestroy();
+        }
 
-        //protected override void OnResume()
-        //{
-        //    base.OnResume();
-        //    mapView.OnResume();
-        //}
+        protected override void OnResume()
+        {
+            base.OnResume();
+            _mapView.OnResume();
+        }
 
-        //protected override void OnPause()
-        //{
-        //    base.OnPause();
-        //    mapView.OnPause();
-        //}
+        protected override void OnPause()
+        {
+            base.OnPause();
+            _mapView.OnPause();
+        }
     }
 }
