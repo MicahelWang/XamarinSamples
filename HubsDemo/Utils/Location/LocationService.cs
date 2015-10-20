@@ -44,8 +44,8 @@ namespace Utils.Location
         /// </summary>
         private Timer _timer;
         private Context _context;
-        private LocationClient _locationClient;
-        private MyLocationListener _myLocationListener;
+        private LocationClient _locationClient = null;
+        private readonly MyLocationListener _myLocationListener=new MyLocationListener();
 
         private PowerManager.WakeLock _wakeLock;
 
@@ -53,8 +53,11 @@ namespace Utils.Location
         public override void OnCreate()
         {
             base.OnCreate();
+           
             Log.Info(Tag, "-------------------------LocationServer OnCreate-------------------");
             _context = this;
+            _locationClient = new LocationClient(ApplicationContext);
+            _locationClient.RegisterLocationListener(_myLocationListener);
             InitLocation();
         }
 
