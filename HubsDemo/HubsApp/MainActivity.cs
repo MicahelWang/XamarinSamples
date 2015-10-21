@@ -53,7 +53,7 @@ namespace HubsApp
             var adapter = new CustomAdapter(myList, Resource.Layout.my_listItem, this);
             view.Adapter = adapter;
 
-            view.SetOnScrollListener(new CustomScroollLister(adapter, view));
+            view.SetOnScrollListener(new CustomScrollLister(adapter, view));
         }
 
 

@@ -60,7 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Utils\CustomAdapter.cs" />
-    <Compile Include="Utils\CustomScroollLister.cs" />
+    <Compile Include="Utils\CustomScrollLister.cs" />
     <Compile Include="DetailsActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />

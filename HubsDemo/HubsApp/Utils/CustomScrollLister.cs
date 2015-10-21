@@ -2,7 +2,7 @@ using Android.Widget;
 
 namespace HubsApp.Utils
 {
-    public class CustomScroollLister : Java.Lang.Object, AbsListView.IOnScrollListener
+    public class CustomScrollLister : Java.Lang.Object, AbsListView.IOnScrollListener
     {
         //private bool _scrollFlag;
 
@@ -10,7 +10,7 @@ namespace HubsApp.Utils
         private readonly ListView _listView;
 
         private int _lastItem;
-        public CustomScroollLister(CustomAdapter adapter, ListView listView)
+        public CustomScrollLister(CustomAdapter adapter, ListView listView)
         {
             _adapter = adapter;
             _listView = listView;

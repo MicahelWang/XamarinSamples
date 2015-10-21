@@ -29,6 +29,8 @@ namespace HubsApp
         private BaiduMap _mBaiduMap;
         private Marker _targetMarker;
         private BitmapDescriptor icon = BitmapDescriptorFactory.FromResource(Resource.Drawable.icon_marka);
+
+        private HotelEntity _hotelEntity=null;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -47,17 +49,16 @@ namespace HubsApp
                 var name = Intent.GetStringExtra("Name");
                 var latitude = Intent.GetDoubleExtra("Latitude", 0.00);
                 var longitude = Intent.GetDoubleExtra("Longitude", 0.00);
-                var hotelEntity = new HotelEntity() { Name = name, Latitude = latitude, Longitude = longitude };
+                _hotelEntity = new HotelEntity() { Name = name, Latitude = latitude, Longitude = longitude };
 
-                txtHotelName.Text = hotelEntity.Name;
-                txtHotelCoordinate.Text = string.Format("({0}, {1})", hotelEntity.Longitude.ToString("0.0000"), hotelEntity.Latitude.ToString("0.0000"));
+                txtHotelName.Text = _hotelEntity.Name;
+                txtHotelCoordinate.Text = string.Format("({0}, {1})", _hotelEntity.Longitude.ToString("0.0000"), _hotelEntity.Latitude.ToString("0.0000"));
                 var mBaidumap = _mMapView.Map;
-                LatLng point = new LatLng(hotelEntity.Latitude, hotelEntity.Longitude);
                 #endregion 数据初始化
 
 
                 _mBaiduMap = _mMapView.Map;
-                var position = new LatLng(hotelEntity.Latitude, hotelEntity.Longitude);
+                var position = new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
                 
 
                 #region 设置居中
@@ -70,7 +71,7 @@ namespace HubsApp
 
                 #region 标记酒店位置
 
-                InitOverlay(position);
+                InitOverlay();
 
                 #endregion 标记酒店位置
 
@@ -87,12 +88,20 @@ namespace HubsApp
         }
 
 
-        private void InitOverlay(LatLng target)
+        private void InitOverlay()
         {
           
-            
+            LatLng target= new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
             OverlayOptions overlayOptions = new MarkerOptions().InvokeIcon(icon).InvokePosition(target).InvokeZIndex(9);
             _targetMarker = (Marker) (_mBaiduMap.AddOverlay(overlayOptions));
+            Button button = new Button(ApplicationContext) {Text = _hotelEntity.Name};
+            button.SetBackgroundResource(Resource.Drawable.popup);
+            //定义用于显示该InfoWindow的坐标点  
+            LatLng pt = target;
+            //创建InfoWindow , 传入 view， 地理坐标， y 轴偏移量 
+            InfoWindow mInfoWindow = new InfoWindow(button, pt, -47);
+            //显示InfoWindow  
+            _mBaiduMap.ShowInfoWindow(mInfoWindow);
         }
 
         protected override void OnDestroy()
