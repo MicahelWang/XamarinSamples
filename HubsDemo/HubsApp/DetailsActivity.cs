@@ -28,7 +28,6 @@ namespace HubsApp
 
         private MapView _mMapView = null;
         private BaiduMap _mBaiduMap;
-        private Marker _hotelMarker,_locationMarker;
         private readonly BitmapDescriptor _hotelBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.dot);
         private readonly BitmapDescriptor _localtionBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.map_location);
 
@@ -58,19 +57,7 @@ namespace HubsApp
 
                 #endregion 数据初始化
 
-                var mBaidumap = _mMapView.Map;
                 _mBaiduMap = _mMapView.Map;
-                var locationPoint = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
-
-
-                #region 设置居中
-                var msu = new MapStatus.Builder().Target(locationPoint).Zoom(14.00f).Build();
-
-                MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.NewMapStatus(msu);
-                //改变地图状态
-                mBaidumap.SetMapStatus(mMapStatusUpdate);
-                #endregion
-
                 #region 标记酒店位置
 
                 InitOverlay();
@@ -78,7 +65,8 @@ namespace HubsApp
                 #endregion 标记酒店位置
 
                 #region 添加事件
-                //_mBaiduMap.SetOnMarkerClickListener(new Com.Baidu.Mapapi.Map.BaiduMap.);
+                _mBaiduMap.SetOnMarkerClickListener(new OnMarkerClickListener(this));
+                _mBaiduMap.SetOnMapClickListener(new OnMapClickListener(this));
                 #endregion
 
 
@@ -92,26 +80,36 @@ namespace HubsApp
 
         private void InitOverlay()
         {
-
+            //位置
             LatLng hotelLatLng = new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
             OverlayOptions hotelOverlayOptions = new MarkerOptions()
                 .InvokeIcon(_hotelBitmap)
                 .InvokePosition(hotelLatLng)
                 .InvokeZIndex(9);
+            Marker hotelMarker = _mBaiduMap.AddOverlay(hotelOverlayOptions).JavaCast<Marker>();
+            Bundle bundle = new Bundle();
+            bundle.PutSerializable("info", _hotelEntity);
+            hotelMarker.ExtraInfo = bundle;
 
-            Overlay hotelOverlay =_mBaiduMap.AddOverlay(hotelOverlayOptions);
-            //_hotelMarker = (Marker)(_mBaiduMap.AddOverlay(hotelOverlayOptions));
+            #region 当前位置
+
+
+
 
             LatLng locationLatLng = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
             OverlayOptions locationOverlayOptions = new MarkerOptions()
                 .InvokeIcon(_localtionBitmap)
                 .InvokePosition(locationLatLng)
                 .InvokeZIndex(9);
+            Marker locationMarker = _mBaiduMap.AddOverlay(locationOverlayOptions).JavaCast<Marker>(); ;
 
-            Overlay locationOverlay=_mBaiduMap.AddOverlay(locationOverlayOptions);
-            //_locationMarker = (Marker)(_mBaiduMap.AddOverlay(locationOverlayOptions));
+            //设置居中
+            MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.NewLatLng(locationLatLng);
+            //改变地图状态
+            _mBaiduMap.SetMapStatus(mMapStatusUpdate);
 
-          
+            #endregion 当前位置
+
 
         }
 
@@ -135,6 +133,69 @@ namespace HubsApp
             base.OnPause();
             _mMapView.OnPause();
         }
+
+        #region 内部类
+
+
+        public class OnMapClickListener : Java.Lang.Object, BaiduMap.IOnMapClickListener
+        {
+            private readonly DetailsActivity _detailsActivity;
+
+            public OnMapClickListener(DetailsActivity detailsActivity)
+            {
+                _detailsActivity = detailsActivity;
+            }
+
+            public void OnMapClick(LatLng p0)
+            {
+                _detailsActivity._mBaiduMap.HideInfoWindow();
+            }
+
+            public bool OnMapPoiClick(MapPoi p0)
+            {
+                return false;
+            }
+        }
+
+        class OnMarkerClickListener : Java.Lang.Object, BaiduMap.IOnMarkerClickListener
+        {
+            private readonly DetailsActivity _detailsActivity;
+
+            public OnMarkerClickListener(DetailsActivity detailsActivity)
+            {
+                _detailsActivity = detailsActivity;
+            }
+
+            public bool OnMarkerClick(Marker marker)
+            {
+                try
+                {
+
+
+                    HotelEntity entity = marker.ExtraInfo.GetSerializable("info") as HotelEntity;
+
+                    TextView location = new TextView(_detailsActivity.ApplicationContext);
+                    location.SetBackgroundResource(Resource.Drawable.infowindow_bg);
+                    location.SetPadding(30, 20, 30, 50);
+                    if (entity != null) location.Text = entity.Name;
+
+                    var latlng = marker.Position;
+                    var point = _detailsActivity._mBaiduMap.Projection.ToScreenLocation(latlng);
+                    Log.Info(Tag, "--!" + point.X + " , " + point.Y);
+                    point.Y -= 47;
+                    var pointInfo = _detailsActivity._mBaiduMap.Projection.FromScreenLocation(point);
+                    var window = new InfoWindow(location, pointInfo,0);
+                    _detailsActivity._mBaiduMap.ShowInfoWindow(window);
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+                return true;
+            }
+        }
+        #endregion
 
 
     }
