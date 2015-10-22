@@ -1,4 +1,4 @@
-using System.Text;
+ï»¿using System.Text;
 using Android.App;
 using Android.Util;
 using Com.Baidu.Location;
@@ -6,7 +6,7 @@ using Com.Baidu.Location;
 namespace HubsApp.Utils
 {
     /// <summary>
-    /// ÊµÏÖÊµÊ±Î»ÖÃ»Øµ÷¼àÌı
+    /// å®ç°å®æ—¶ä½ç½®å›è°ƒç›‘å¬
     /// </summary>
     public class MyLocationListener : Java.Lang.Object, IBDLocationListener
     {
@@ -44,46 +44,46 @@ namespace HubsApp.Utils
             switch (location.LocType)
             {
                 case BDLocation.TypeGpsLocation:
-                    // GPS¶¨Î»½á¹û
+                    // GPSå®šä½ç»“æœ
                     sb.Append("\nspeed : ");
-                    sb.Append(location.Speed); // µ¥Î»£º¹«ÀïÃ¿Ğ¡Ê±
+                    sb.Append(location.Speed); // å•ä½ï¼šå…¬é‡Œæ¯å°æ—¶
                     sb.Append("\nsatellite : ");
                     sb.Append(location.SatelliteNumber);
                     sb.Append("\nheight : ");
-                    sb.Append(location.Altitude); // µ¥Î»£ºÃ×
+                    sb.Append(location.Altitude); // å•ä½ï¼šç±³
                     sb.Append("\ndirection : ");
                     sb.Append(location.Direction);
                     sb.Append("\naddr : ");
                     sb.Append(location.AddrStr);
                     sb.Append("\ndescribe : ");
-                    sb.Append("gps¶¨Î»³É¹¦");
+                    sb.Append("gpså®šä½æˆåŠŸ");
                     break;
                 case BDLocation.TypeNetWorkLocation:
-                    // ÍøÂç¶¨Î»½á¹û
+                    // ç½‘ç»œå®šä½ç»“æœ
                     sb.Append("\naddr : ");
                     sb.Append(location.AddrStr);
-                    //ÔËÓªÉÌĞÅÏ¢
+                    //è¿è¥å•†ä¿¡æ¯
                     sb.Append("\noperationers : ");
                     sb.Append(location.Operators);
                     sb.Append("\ndescribe : ");
-                    sb.Append("ÍøÂç¶¨Î»³É¹¦");
+                    sb.Append("ç½‘ç»œå®šä½æˆåŠŸ");
                     break;
                 case BDLocation.TypeOffLineLocation:
-                    // ÀëÏß¶¨Î»½á¹û
+                    // ç¦»çº¿å®šä½ç»“æœ
                     sb.Append("\ndescribe : ");
-                    sb.Append("ÀëÏß¶¨Î»³É¹¦£¬ÀëÏß¶¨Î»½á¹ûÒ²ÊÇÓĞĞ§µÄ");
+                    sb.Append("ç¦»çº¿å®šä½æˆåŠŸï¼Œç¦»çº¿å®šä½ç»“æœä¹Ÿæ˜¯æœ‰æ•ˆçš„");
                     break;
                 case BDLocation.TypeServerError:
                     sb.Append("\ndescribe : ");
-                    sb.Append("·şÎñ¶ËÍøÂç¶¨Î»Ê§°Ü£¬¿ÉÒÔ·´À¡IMEIºÅºÍ´óÌå¶¨Î»Ê±¼äµ½loc-bugs@baidu.com£¬»áÓĞÈË×·²éÔ­Òò");
+                    sb.Append("æœåŠ¡ç«¯ç½‘ç»œå®šä½å¤±è´¥ï¼Œå¯ä»¥åé¦ˆIMEIå·å’Œå¤§ä½“å®šä½æ—¶é—´åˆ°loc-bugs@baidu.comï¼Œä¼šæœ‰äººè¿½æŸ¥åŸå› ");
                     break;
                 case BDLocation.TypeNetWorkException:
                     sb.Append("\ndescribe : ");
-                    sb.Append("ÍøÂç²»Í¬µ¼ÖÂ¶¨Î»Ê§°Ü£¬Çë¼ì²éÍøÂçÊÇ·ñÍ¨³©");
+                    sb.Append("ç½‘ç»œä¸åŒå¯¼è‡´å®šä½å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘ç»œæ˜¯å¦é€šç•…");
                     break;
                 case BDLocation.TypeCriteriaException:
                     sb.Append("\ndescribe : ");
-                    sb.Append("ÎŞ·¨»ñÈ¡ÓĞĞ§¶¨Î»ÒÀ¾İµ¼ÖÂ¶¨Î»Ê§°Ü£¬Ò»°ãÊÇÓÉÓÚÊÖ»úµÄÔ­Òò£¬´¦ÓÚ·ÉĞĞÄ£Ê½ÏÂÒ»°ã»áÔì³ÉÕâÖÖ½á¹û£¬¿ÉÒÔÊÔ×ÅÖØÆôÊÖ»ú");
+                    sb.Append("æ— æ³•è·å–æœ‰æ•ˆå®šä½ä¾æ®å¯¼è‡´å®šä½å¤±è´¥ï¼Œä¸€èˆ¬æ˜¯ç”±äºæ‰‹æœºçš„åŸå› ï¼Œå¤„äºé£è¡Œæ¨¡å¼ä¸‹ä¸€èˆ¬ä¼šé€ æˆè¿™ç§ç»“æœï¼Œå¯ä»¥è¯•ç€é‡å¯æ‰‹æœº");
                     break;
             }
 

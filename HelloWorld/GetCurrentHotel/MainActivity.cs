@@ -50,16 +50,7 @@ namespace GetCurrentHotel
                 StartActivity(intent);
             };
 
-            Button btnGetBaiduLocation = FindViewById<Button>(Resource.Id.btnBaiduLocation);
-
-            MyLocationListion myListener = new MyLocationListion();
-
-            btnGetBaiduLocation.Click += (o, v)=> {
-                mLocClient = new LocationClient(this, new LocationClientOption() { CoorType = "bd0911", OpenGps=true, ScanSpan=1000});
-                mLocClient.RegisterLocationListener(myListener);
-                
-                mLocClient.Start();
-            };
+            
 
 
             //lvwDetail.ItemClick += (o, e) => {
@@ -107,7 +98,16 @@ namespace GetCurrentHotel
             TextView txtCoordinate = FindViewById<TextView>(Resource.Id.txtCoordinate);
 
 
-            
+            Button btnGetBaiduLocation = FindViewById<Button>(Resource.Id.btnBaiduLocation);
+
+            MyLocationListion myListener = new MyLocationListion();
+
+            btnGetBaiduLocation.Click += (o, v) => {
+                mLocClient = new LocationClient(this, new LocationClientOption() { CoorType = "bd0911", OpenGps = true, ScanSpan = 1000 });
+                mLocClient.RegisterLocationListener(myListener);
+
+                mLocClient.Start();
+            };
 
 
             Button btnGetLocation = FindViewById<Button>(Resource.Id.btnRefresh);

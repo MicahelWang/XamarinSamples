@@ -29,4 +29,4 @@ using Android.App;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: MetaData("com.baidu.lbsapi.API_KEY",Value= "Yy9XdIG2LbOftSAEfIseLiXh")]
+[assembly: MetaData("com.baidu.lbsapi.API_KEY",Value= "zM57im6m0RfClIkqBw14MPBm")]

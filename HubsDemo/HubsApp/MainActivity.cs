@@ -152,7 +152,7 @@ namespace HubsApp
             //设置option的属性
             LocationClientOption option = new LocationClientOption();
             option.SetLocationMode(LocationClientOption.LocationMode.HightAccuracy);//可选，默认高精度，设置定位模式，高精度，低功耗，仅设备
-            option.CoorType = "gcj02";//可选，默认gcj02，设置返回的定位结果坐标系，
+            option.CoorType = "bd09ll";//可选，默认gcj02，设置返回的定位结果坐标系，
             const int interval = 1000;
             option.ScanSpan = interval;//可选，默认0，即仅定位一次，设置发起定位请求的间隔需要大于等于1000ms才是有效的
             option.SetIsNeedAddress(false);//可选，设置是否需要地址信息，默认不需要

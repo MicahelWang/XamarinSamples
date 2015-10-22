@@ -15,6 +15,7 @@ using Android.Widget;
 
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
+using HubsApp.Utils;
 using Utils;
 
 
@@ -58,7 +59,7 @@ namespace HubsApp
 
 
                 _mBaiduMap = _mMapView.Map;
-                var position = new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
+                var position = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
                 
 
                 #region 设置居中
