@@ -1,0 +1,33 @@
+<metadata>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='s' and count(parameter)=0]" name="name">SSS</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='C' and count(parameter)=0]" name="name">CCC</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='A' and count(parameter)=0]" name="name">AAA</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='i' and count(parameter)=0]" name="name">III</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='j' and count(parameter)=0]" name="name">JJJ</attr>
+
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='K' and count(parameter)=0]" name="name">KKK</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='L' and count(parameter)=0]" name="name">LLL</attr>
+
+  <attr  path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='M' and count(parameter)=0]" name="name">MMM</attr>
+
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='N' and count(parameter)=0]"  name="name">NNN</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='P' and count(parameter)=0]"  name="name">PPP</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='Q' and count(parameter)=0]" name="name">QQQ</attr>
+
+  <attr path="/api/package[@name='com.amap.api.mapcore']/class[@name='AMapDelegateImpGLSurfaceView']/method[@name='R' and count(parameter)=0]" name="name">RRR</attr>
+  <!--
+  <attr  name="name">JJJ</attr>
+ -->
+
+
+</metadata>

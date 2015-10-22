@@ -28,10 +28,11 @@ namespace HubsApp
 
         private MapView _mMapView = null;
         private BaiduMap _mBaiduMap;
-        private Marker _targetMarker;
-        private BitmapDescriptor icon = BitmapDescriptorFactory.FromResource(Resource.Drawable.icon_marka);
+        private Marker _hotelMarker,_locationMarker;
+        private readonly BitmapDescriptor _hotelBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.dot);
+        private readonly BitmapDescriptor _localtionBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.map_location);
 
-        private HotelEntity _hotelEntity=null;
+        private HotelEntity _hotelEntity = null;
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -54,16 +55,16 @@ namespace HubsApp
 
                 txtHotelName.Text = _hotelEntity.Name;
                 txtHotelCoordinate.Text = string.Format("({0}, {1})", _hotelEntity.Longitude.ToString("0.0000"), _hotelEntity.Latitude.ToString("0.0000"));
-                var mBaidumap = _mMapView.Map;
+
                 #endregion 数据初始化
 
-
+                var mBaidumap = _mMapView.Map;
                 _mBaiduMap = _mMapView.Map;
-                var position = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
-                
+                var locationPoint = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
+
 
                 #region 设置居中
-                var msu = new MapStatus.Builder().Target(position).Zoom(14.00f).Build();
+                var msu = new MapStatus.Builder().Target(locationPoint).Zoom(14.00f).Build();
 
                 MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.NewMapStatus(msu);
                 //改变地图状态
@@ -91,26 +92,36 @@ namespace HubsApp
 
         private void InitOverlay()
         {
+
+            LatLng hotelLatLng = new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
+            OverlayOptions hotelOverlayOptions = new MarkerOptions()
+                .InvokeIcon(_hotelBitmap)
+                .InvokePosition(hotelLatLng)
+                .InvokeZIndex(9);
+
+            Overlay hotelOverlay =_mBaiduMap.AddOverlay(hotelOverlayOptions);
+            //_hotelMarker = (Marker)(_mBaiduMap.AddOverlay(hotelOverlayOptions));
+
+            LatLng locationLatLng = new LatLng(CurrentData.Latitude, CurrentData.Longitude);
+            OverlayOptions locationOverlayOptions = new MarkerOptions()
+                .InvokeIcon(_localtionBitmap)
+                .InvokePosition(locationLatLng)
+                .InvokeZIndex(9);
+
+            Overlay locationOverlay=_mBaiduMap.AddOverlay(locationOverlayOptions);
+            //_locationMarker = (Marker)(_mBaiduMap.AddOverlay(locationOverlayOptions));
+
           
-            LatLng target= new LatLng(_hotelEntity.Latitude, _hotelEntity.Longitude);
-            OverlayOptions overlayOptions = new MarkerOptions().InvokeIcon(icon).InvokePosition(target).InvokeZIndex(9);
-            _targetMarker = (Marker) (_mBaiduMap.AddOverlay(overlayOptions));
-            Button button = new Button(ApplicationContext) {Text = _hotelEntity.Name};
-            button.SetBackgroundResource(Resource.Drawable.popup);
-            //定义用于显示该InfoWindow的坐标点  
-            LatLng pt = target;
-            //创建InfoWindow , 传入 view， 地理坐标， y 轴偏移量 
-            InfoWindow mInfoWindow = new InfoWindow(button, pt, -47);
-            //显示InfoWindow  
-            _mBaiduMap.ShowInfoWindow(mInfoWindow);
+
         }
 
         protected override void OnDestroy()
         {
             _mMapView.OnDestroy();
             base.OnDestroy();
-            icon.Recycle();
-            
+            _hotelBitmap.Recycle();
+            _localtionBitmap.Recycle();
+
         }
 
         protected override void OnResume()
@@ -125,6 +136,6 @@ namespace HubsApp
             _mMapView.OnPause();
         }
 
-        
+
     }
 }
