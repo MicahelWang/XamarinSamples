@@ -31,6 +31,8 @@ namespace HubsApp
         private readonly BitmapDescriptor _hotelBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.dot);
         private readonly BitmapDescriptor _localtionBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.map_location);
 
+        private Button _btnReserve;
+
         private HotelEntity _hotelEntity = null;
         protected override void OnCreate(Bundle bundle)
         {
@@ -42,6 +44,7 @@ namespace HubsApp
                 _mMapView = FindViewById<MapView>(Resource.Id.bmapView);
                 var txtHotelName = FindViewById<TextView>(Resource.Id.txtHotelName);
                 var txtHotelCoordinate = FindViewById<TextView>(Resource.Id.txtHotelCoordinate);
+                _btnReserve = FindViewById<Button>(Resource.Id.btnReserve);
 
 
                 #region 数据初始化
@@ -67,6 +70,11 @@ namespace HubsApp
                 #region 添加事件
                 _mBaiduMap.SetOnMarkerClickListener(new OnMarkerClickListener(this));
                 _mBaiduMap.SetOnMapClickListener(new OnMapClickListener(this));
+                _btnReserve.Click += (sender, args) =>
+                {
+                    StartActivity(new Intent(this,typeof(PayLayout)));
+                };
+
                 #endregion
 
 
@@ -135,8 +143,6 @@ namespace HubsApp
         }
 
         #region 内部类
-
-
         public class OnMapClickListener : Java.Lang.Object, BaiduMap.IOnMapClickListener
         {
             private readonly DetailsActivity _detailsActivity;

@@ -48,7 +48,7 @@ namespace HubsApp.Utils
 
             _titleTextView.Text = enttiy.Name;
             enttiy.GetDistance(CurrentData.Longitude, CurrentData.Latitude);
-            const string description = "距离{0}米";
+            string description = _context.GetString(Resource.String.DistanceFormat);
             var distance = enttiy.Distance;
             _textTextView.Text = string.Format(description, distance);
             return convertView;

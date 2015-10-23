@@ -30,6 +30,28 @@ namespace HubsApp
 			global::Utils.Resource.String.Hello = global::HubsApp.Resource.String.Hello;
 		}
 		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int push_bottom_in = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int push_bottom_in2 = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int push_bottom_out = 2130968578;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
+		}
+		
 		public partial class Attribute
 		{
 			
@@ -47,112 +69,145 @@ namespace HubsApp
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int dot = 2130837504;
+			public const int btn_style_alert_dialog_background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int home_logo_top = 2130837505;
+			public const int btn_style_alert_dialog_button = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int btn_style_alert_dialog_button_normal = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int icon_03 = 2130837507;
+			public const int btn_style_alert_dialog_button_pressed = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int icon_03_bg = 2130837508;
+			public const int btn_style_alert_dialog_cancel = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int icon_en = 2130837509;
+			public const int btn_style_alert_dialog_cancel_normal = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int icon_gcoding = 2130837510;
+			public const int btn_style_alert_dialog_special = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int icon_geo = 2130837511;
+			public const int btn_style_alert_dialog_special_normal = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int icon_marka = 2130837512;
+			public const int btn_style_alert_dialog_special_pressed = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int icon_markb = 2130837513;
+			public const int dot = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int icon_markc = 2130837514;
+			public const int home_logo_top = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int icon_markd = 2130837515;
+			public const int ic_action_search = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int icon_marke = 2130837516;
+			public const int ic_launcher = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int icon_markf = 2130837517;
+			public const int Icon = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int icon_markg = 2130837518;
+			public const int icon_03 = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int icon_markh = 2130837519;
+			public const int icon_03_bg = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int icon_marki = 2130837520;
+			public const int icon_en = 2130837520;
 			
 			// aapt resource value: 0x7f020011
-			public const int icon_markj = 2130837521;
+			public const int icon_gcoding = 2130837521;
 			
 			// aapt resource value: 0x7f020012
-			public const int icon_st = 2130837522;
+			public const int icon_geo = 2130837522;
 			
 			// aapt resource value: 0x7f020013
-			public const int infowindow_bg = 2130837523;
+			public const int icon_marka = 2130837523;
 			
 			// aapt resource value: 0x7f020014
-			public const int location = 2130837524;
+			public const int icon_markb = 2130837524;
 			
 			// aapt resource value: 0x7f020015
-			public const int location_back = 2130837525;
+			public const int icon_markc = 2130837525;
 			
 			// aapt resource value: 0x7f020016
-			public const int location_tips = 2130837526;
+			public const int icon_markd = 2130837526;
 			
 			// aapt resource value: 0x7f020017
-			public const int map_location = 2130837527;
+			public const int icon_marke = 2130837527;
 			
 			// aapt resource value: 0x7f020018
-			public const int map_location_red = 2130837528;
+			public const int icon_markf = 2130837528;
 			
 			// aapt resource value: 0x7f020019
-			public const int monoandroidsplash = 2130837529;
+			public const int icon_markg = 2130837529;
 			
 			// aapt resource value: 0x7f02001a
-			public const int next_ = 2130837530;
+			public const int icon_markh = 2130837530;
 			
 			// aapt resource value: 0x7f02001b
-			public const int next_down_ = 2130837531;
+			public const int icon_marki = 2130837531;
 			
 			// aapt resource value: 0x7f02001c
-			public const int popup = 2130837532;
+			public const int icon_markj = 2130837532;
 			
 			// aapt resource value: 0x7f02001d
-			public const int popup_down = 2130837533;
+			public const int icon_st = 2130837533;
 			
 			// aapt resource value: 0x7f02001e
-			public const int popup_left = 2130837534;
+			public const int infowindow_bg = 2130837534;
 			
 			// aapt resource value: 0x7f02001f
-			public const int popup_middle = 2130837535;
+			public const int location = 2130837535;
 			
 			// aapt resource value: 0x7f020020
-			public const int popup_right = 2130837536;
+			public const int location_back = 2130837536;
 			
 			// aapt resource value: 0x7f020021
-			public const int popup_side = 2130837537;
+			public const int location_tips = 2130837537;
 			
 			// aapt resource value: 0x7f020022
-			public const int pre_ = 2130837538;
+			public const int map_location = 2130837538;
 			
 			// aapt resource value: 0x7f020023
-			public const int pre_down_ = 2130837539;
+			public const int map_location_red = 2130837539;
+			
+			// aapt resource value: 0x7f020024
+			public const int monoandroidsplash = 2130837540;
+			
+			// aapt resource value: 0x7f020025
+			public const int next_ = 2130837541;
+			
+			// aapt resource value: 0x7f020026
+			public const int next_down_ = 2130837542;
+			
+			// aapt resource value: 0x7f020027
+			public const int popup = 2130837543;
+			
+			// aapt resource value: 0x7f020028
+			public const int popup_down = 2130837544;
+			
+			// aapt resource value: 0x7f020029
+			public const int popup_left = 2130837545;
+			
+			// aapt resource value: 0x7f02002a
+			public const int popup_middle = 2130837546;
+			
+			// aapt resource value: 0x7f02002b
+			public const int popup_right = 2130837547;
+			
+			// aapt resource value: 0x7f02002c
+			public const int popup_side = 2130837548;
+			
+			// aapt resource value: 0x7f02002d
+			public const int pre_ = 2130837549;
+			
+			// aapt resource value: 0x7f02002e
+			public const int pre_down_ = 2130837550;
 			
 			static Drawable()
 			{
@@ -167,29 +222,44 @@ namespace HubsApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f060004
-			public const int HotelListView = 2131099652;
+			// aapt resource value: 0x7f070005
+			public const int HotelListView = 2131165189;
 			
-			// aapt resource value: 0x7f060003
-			public const int bmapView = 2131099651;
+			// aapt resource value: 0x7f070004
+			public const int bmapView = 2131165188;
 			
-			// aapt resource value: 0x7f060007
-			public const int itemText = 2131099655;
+			// aapt resource value: 0x7f070002
+			public const int btnReserve = 2131165186;
 			
-			// aapt resource value: 0x7f060006
-			public const int itemTitle = 2131099654;
+			// aapt resource value: 0x7f07000a
+			public const int btn_Alipay = 2131165194;
 			
-			// aapt resource value: 0x7f060000
-			public const int linearLayout1 = 2131099648;
+			// aapt resource value: 0x7f07000c
+			public const int btn_Cancel = 2131165196;
 			
-			// aapt resource value: 0x7f060005
-			public const int myListItem = 2131099653;
+			// aapt resource value: 0x7f07000b
+			public const int btn_TecentPay = 2131165195;
 			
-			// aapt resource value: 0x7f060002
-			public const int txtHotelCoordinate = 2131099650;
+			// aapt resource value: 0x7f070008
+			public const int itemText = 2131165192;
 			
-			// aapt resource value: 0x7f060001
-			public const int txtHotelName = 2131099649;
+			// aapt resource value: 0x7f070007
+			public const int itemTitle = 2131165191;
+			
+			// aapt resource value: 0x7f070000
+			public const int linearLayout1 = 2131165184;
+			
+			// aapt resource value: 0x7f070006
+			public const int myListItem = 2131165190;
+			
+			// aapt resource value: 0x7f070009
+			public const int pop_layout = 2131165193;
+			
+			// aapt resource value: 0x7f070003
+			public const int txtHotelCoordinate = 2131165187;
+			
+			// aapt resource value: 0x7f070001
+			public const int txtHotelName = 2131165185;
 			
 			static Id()
 			{
@@ -213,6 +283,9 @@ namespace HubsApp
 			// aapt resource value: 0x7f030002
 			public const int my_listItem = 2130903042;
 			
+			// aapt resource value: 0x7f030003
+			public const int PayLayout = 2130903043;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -226,17 +299,32 @@ namespace HubsApp
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int ApplicationName = 2130968577;
+			// aapt resource value: 0x7f050008
+			public const int Alipay = 2131034120;
 			
-			// aapt resource value: 0x7f040000
-			public const int Hello = 2130968576;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040003
-			public const int Lat = 2130968579;
+			// aapt resource value: 0x7f050006
+			public const int DistanceFormat = 2131034118;
 			
-			// aapt resource value: 0x7f040002
-			public const int Lon = 2130968578;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
+			
+			// aapt resource value: 0x7f050005
+			public const int HotelDetails = 2131034117;
+			
+			// aapt resource value: 0x7f050002
+			public const int HotelName = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int HotelPosition = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int Reserve = 2131034116;
+			
+			// aapt resource value: 0x7f050007
+			public const int TecentPay = 2131034119;
 			
 			static String()
 			{
@@ -251,8 +339,8 @@ namespace HubsApp
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int Mono_Android_Theme_Splash = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Mono_Android_Theme_Splash = 2131099648;
 			
 			static Style()
 			{

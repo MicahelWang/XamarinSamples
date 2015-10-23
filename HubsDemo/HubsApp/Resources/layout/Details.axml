@@ -5,12 +5,17 @@
     android:layout_height="match_parent"
     android:id="@+id/linearLayout1">
     <TextView
-        android:text="酒店名称"
+        android:text="@string/HotelName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtHotelName" />
+    <Button
+        android:text="@string/Reserve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnReserve" />
     <TextView
-        android:text="酒店坐标"
+        android:text="@string/HotelPosition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtHotelCoordinate" />

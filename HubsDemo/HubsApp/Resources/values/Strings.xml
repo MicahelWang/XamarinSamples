@@ -2,6 +2,11 @@
 <resources>
   <string name="Hello">Hello World, Click Me!</string>
   <string name="ApplicationName">HubsApp</string>
-  <string name="Lon">0</string>
-  <string name="Lat">0</string>
+  <string name="HotelName">酒店名称</string>
+  <string name="HotelPosition">酒店坐标</string>
+  <string name="Reserve">预定</string>
+  <string name="HotelDetails">酒店详情</string>
+  <string name="DistanceFormat">距离{0}公里</string>
+  <string name="TecentPay">微信支付</string>
+  <string name="Alipay">支付宝</string>
 </resources>
