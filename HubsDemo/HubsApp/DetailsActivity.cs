@@ -34,6 +34,7 @@ namespace HubsApp
         private Button _btnReserve;
 
         private HotelEntity _hotelEntity = null;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -68,11 +69,41 @@ namespace HubsApp
                 #endregion 标记酒店位置
 
                 #region 添加事件
-                _mBaiduMap.SetOnMarkerClickListener(new OnMarkerClickListener(this));
-                _mBaiduMap.SetOnMapClickListener(new OnMapClickListener(this));
+                // _mBaiduMap.SetOnMarkerClickListener(new OnMarkerClickListener(this));
+                _mBaiduMap.MarkerClick += (sender, args) =>
+                {
+                    var marker = args.P0;
+                    try
+                    {
+                        HotelEntity entity = marker.ExtraInfo.GetSerializable("info") as HotelEntity;
+
+                        TextView location = new TextView(ApplicationContext);
+                        location.SetBackgroundResource(Resource.Drawable.infowindow_bg);
+                        location.SetPadding(30, 20, 30, 50);
+                        if (entity != null) location.Text = entity.Name;
+
+                        var latlng = marker.Position;
+                        var point = _mBaiduMap.Projection.ToScreenLocation(latlng);
+                        Log.Info(Tag, "--!" + point.X + " , " + point.Y);
+                        point.Y -= 47;
+                        var pointInfo = _mBaiduMap.Projection.FromScreenLocation(point);
+                        var window = new InfoWindow(location, pointInfo, 0);
+                        _mBaiduMap.ShowInfoWindow(window);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Log.Error(Tag, "MarkerClick Excetipn :" + ex.Message);
+                    }
+                };
+                //_mBaiduMap.SetOnMapClickListener(new OnMapClickListener(this));
+                _mBaiduMap.MapClick += (sender, args) =>
+                {
+                    _mBaiduMap.HideInfoWindow();
+                };
                 _btnReserve.Click += (sender, args) =>
                 {
-                    StartActivity(new Intent(this,typeof(PayLayout)));
+                    StartActivity(new Intent(this, typeof(PayLayout)));
                 };
 
                 #endregion
@@ -133,74 +164,74 @@ namespace HubsApp
         protected override void OnResume()
         {
             base.OnResume();
-            _mMapView.OnResume();
+            //_mMapView.OnResume();
         }
 
         protected override void OnPause()
         {
             base.OnPause();
-            _mMapView.OnPause();
+            //_mMapView.OnPause();
         }
 
         #region 内部类
-        public class OnMapClickListener : Java.Lang.Object, BaiduMap.IOnMapClickListener
-        {
-            private readonly DetailsActivity _detailsActivity;
+        //public class OnMapClickListener : Java.Lang.Object, BaiduMap.IOnMapClickListener
+        //{
+        //    private readonly DetailsActivity _detailsActivity;
 
-            public OnMapClickListener(DetailsActivity detailsActivity)
-            {
-                _detailsActivity = detailsActivity;
-            }
+        //    public OnMapClickListener(DetailsActivity detailsActivity)
+        //    {
+        //        _detailsActivity = detailsActivity;
+        //    }
 
-            public void OnMapClick(LatLng p0)
-            {
-                _detailsActivity._mBaiduMap.HideInfoWindow();
-            }
+        //    public void OnMapClick(LatLng p0)
+        //    {
+        //        _detailsActivity._mBaiduMap.HideInfoWindow();
+        //    }
 
-            public bool OnMapPoiClick(MapPoi p0)
-            {
-                return false;
-            }
-        }
+        //    public bool OnMapPoiClick(MapPoi p0)
+        //    {
+        //        return false;
+        //    }
+        //}
 
-        class OnMarkerClickListener : Java.Lang.Object, BaiduMap.IOnMarkerClickListener
-        {
-            private readonly DetailsActivity _detailsActivity;
+        //class OnMarkerClickListener : Java.Lang.Object, BaiduMap.IOnMarkerClickListener
+        //{
+        //    private readonly DetailsActivity _detailsActivity;
 
-            public OnMarkerClickListener(DetailsActivity detailsActivity)
-            {
-                _detailsActivity = detailsActivity;
-            }
+        //    public OnMarkerClickListener(DetailsActivity detailsActivity)
+        //    {
+        //        _detailsActivity = detailsActivity;
+        //    }
 
-            public bool OnMarkerClick(Marker marker)
-            {
-                try
-                {
+        //    public bool OnMarkerClick(Marker marker)
+        //    {
+        //        try
+        //        {
 
 
-                    HotelEntity entity = marker.ExtraInfo.GetSerializable("info") as HotelEntity;
+        //            HotelEntity entity = marker.ExtraInfo.GetSerializable("info") as HotelEntity;
 
-                    TextView location = new TextView(_detailsActivity.ApplicationContext);
-                    location.SetBackgroundResource(Resource.Drawable.infowindow_bg);
-                    location.SetPadding(30, 20, 30, 50);
-                    if (entity != null) location.Text = entity.Name;
+        //            TextView location = new TextView(_detailsActivity.ApplicationContext);
+        //            location.SetBackgroundResource(Resource.Drawable.infowindow_bg);
+        //            location.SetPadding(30, 20, 30, 50);
+        //            if (entity != null) location.Text = entity.Name;
 
-                    var latlng = marker.Position;
-                    var point = _detailsActivity._mBaiduMap.Projection.ToScreenLocation(latlng);
-                    Log.Info(Tag, "--!" + point.X + " , " + point.Y);
-                    point.Y -= 47;
-                    var pointInfo = _detailsActivity._mBaiduMap.Projection.FromScreenLocation(point);
-                    var window = new InfoWindow(location, pointInfo,0);
-                    _detailsActivity._mBaiduMap.ShowInfoWindow(window);
-                }
-                catch (Exception)
-                {
+        //            var latlng = marker.Position;
+        //            var point = _detailsActivity._mBaiduMap.Projection.ToScreenLocation(latlng);
+        //            Log.Info(Tag, "--!" + point.X + " , " + point.Y);
+        //            point.Y -= 47;
+        //            var pointInfo = _detailsActivity._mBaiduMap.Projection.FromScreenLocation(point);
+        //            var window = new InfoWindow(location, pointInfo, 0);
+        //            _detailsActivity._mBaiduMap.ShowInfoWindow(window);
+        //        }
+        //        catch (Exception)
+        //        {
 
-                    return false;
-                }
-                return true;
-            }
-        }
+        //            return false;
+        //        }
+        //        return true;
+        //    }
+        //}
         #endregion
 
 

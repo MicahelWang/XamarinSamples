@@ -13,7 +13,7 @@ using Java.Lang;
 
 namespace HubsApp
 {
-    [Activity(Label = "PayLayout")]
+    [Activity(Label = "PayLayout",Theme = "@style/MyDialogStyleBottom")]
     public class PayLayout : Activity
     {
         private Button _btnAlipay, _btnTecentPay, _btnCancel;
@@ -24,6 +24,7 @@ namespace HubsApp
             base.OnCreate(bundle);
 
             SetContentView(Resource.Layout.PayLayout);
+            
             _btnAlipay = FindViewById<Button>(Resource.Id.btn_Alipay);
             _btnTecentPay = FindViewById<Button>(Resource.Id.btn_TecentPay);
             _btnCancel = FindViewById<Button>(Resource.Id.btn_Cancel);

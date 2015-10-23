@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PayLayout.cs" />
+    <Compile Include="Utils\SignUtils.cs" />
+    <Compile Include="Utils\PayResult.cs" />
     <Compile Include="Utils\CurrentData.cs" />
     <Compile Include="Utils\MyLocationListener.cs" />
     <Compile Include="Utils\CustomAdapter.cs" />
@@ -267,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\btn_style_alert_dialog_special.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\dimens.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
