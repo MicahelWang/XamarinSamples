@@ -21,6 +21,8 @@ namespace HubsApp
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
+            SetContentView(Resource.Layout.PayLayout);
             _btnAlipay = FindViewById<Button>(Resource.Id.btn_Alipay);
             _btnAlipay = FindViewById<Button>(Resource.Id.btn_TecentPay);
             _btnAlipay = FindViewById<Button>(Resource.Id.btn_Cancel);
@@ -28,7 +30,6 @@ namespace HubsApp
 
             _layout = FindViewById<LinearLayout>(Resource.Id.pop_layout);
             // Create your application here
-            SetContentView(Resource.Layout.PayLayout);
         }
     }
 }
