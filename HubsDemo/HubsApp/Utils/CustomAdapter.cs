@@ -49,7 +49,7 @@ namespace HubsApp.Utils
             _titleTextView.Text = enttiy.Name;
             enttiy.GetDistance(CurrentData.Longitude, CurrentData.Latitude);
             string description = _context.GetString(Resource.String.DistanceFormat);
-            var distance = enttiy.Distance;
+            var distance = enttiy.Distance.ToString("F2");
             _textTextView.Text = string.Format(description, distance);
             return convertView;
         }

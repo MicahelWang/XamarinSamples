@@ -60,6 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PayLayout.cs" />
+    <Compile Include="Utils\AliPayHelper.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\MD5.cs" />
+    <Compile Include="Utils\MD5Util.cs" />
     <Compile Include="Utils\SignUtils.cs" />
     <Compile Include="Utils\PayResult.cs" />
     <Compile Include="Utils\CurrentData.cs" />
@@ -70,6 +74,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidNativeLibrary Include="libs\arm64-v8a\libBaiduMapSDK_v3_5_0_31.so" />
