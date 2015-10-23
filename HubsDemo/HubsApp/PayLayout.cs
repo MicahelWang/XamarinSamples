@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.Lang;
 
 namespace HubsApp
 {
@@ -24,12 +25,40 @@ namespace HubsApp
 
             SetContentView(Resource.Layout.PayLayout);
             _btnAlipay = FindViewById<Button>(Resource.Id.btn_Alipay);
-            _btnAlipay = FindViewById<Button>(Resource.Id.btn_TecentPay);
-            _btnAlipay = FindViewById<Button>(Resource.Id.btn_Cancel);
+            _btnTecentPay = FindViewById<Button>(Resource.Id.btn_TecentPay);
+            _btnCancel = FindViewById<Button>(Resource.Id.btn_Cancel);
 
 
             _layout = FindViewById<LinearLayout>(Resource.Id.pop_layout);
             // Create your application here
+
+            _layout.Click += delegate
+            {
+                Toast.MakeText(ApplicationContext,
+                                "提示：点击窗口外部关闭窗口！",
+                                ToastLength.Short);
+            };
+            _btnAlipay.Click += (sender, args) =>
+            {
+                Finish();
+            };
+            _btnTecentPay.Click += (sender, args) =>
+            {
+                Finish();
+            };
+            _btnCancel.Click += (sender, args) =>
+            {
+                Finish();
+            };
+
+
+        }
+
+        
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            Finish();
+            return true;
         }
     }
 }
