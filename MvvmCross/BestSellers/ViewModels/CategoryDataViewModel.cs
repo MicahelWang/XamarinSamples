@@ -10,10 +10,7 @@ namespace BestSellers.ViewModels
         public string ListName { get; set; }
         public string DisplayName { get; set; }
 
-        public string ListNameEncoded
-        {
-            get { return ListName.ToLower().Replace(' ', '-'); }
-        }
+        public string ListNameEncoded => ListName.ToLower().Replace(' ', '-');
 
         public override string ToString()
         {

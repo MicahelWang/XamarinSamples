@@ -8,7 +8,7 @@ namespace Droid.Core.ViewModels
 {
     public class SecondViewModel : MvxViewModel
     {
-        public string ButtonText { get { return "Click me"; } }
+        public string ButtonText => "Click me";
 
         public ICommand MyCommand
         {

@@ -29,7 +29,7 @@ namespace BestSellers.ViewModels
         public string SundayReviewLink { get; set; }
         public string ArticleChapterLink { get; set; }
 
-        public string ISBN
+        public string Isbn
         {
             get
             {
@@ -45,12 +45,12 @@ namespace BestSellers.ViewModels
 
         public override string ToString()
         {
-            return Title + "(" + ISBN + ")";
+            return Title + "(" + Isbn + ")";
         }
 
         public ICommand ViewDetailCommand
         {
-            get { return new MvxCommand(() => ShowViewModel<BookViewModel>(new { category= CategoryEncoded, book=ISBN })); }
+            get { return new MvxCommand(() => ShowViewModel<BookViewModel>(new { category= CategoryEncoded, book=Isbn })); }
         }
     }
 }

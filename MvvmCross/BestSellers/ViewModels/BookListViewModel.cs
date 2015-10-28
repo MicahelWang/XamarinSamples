@@ -9,7 +9,7 @@ namespace BestSellers.ViewModels
 {
     public class BookListViewModel : BaseViewModel
     {
-        const string URL_BOOKLIST = "http://192.168.1.87/svc/books/v2/lists/{0}.xml?api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
+        const string UrlBooklist = "http://192.168.1.87/svc/books/v2/lists/{0}.xml?api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
 
         public void Init(string category = null)
         {
@@ -42,7 +42,7 @@ namespace BestSellers.ViewModels
         private void AsyncLoad(string category)
         {
             category = "combined-print-and-e-book-fiction";
-            string urlBooks = String.Format(URL_BOOKLIST, category);
+            string urlBooks = String.Format(UrlBooklist, category);
             GeneralAsyncLoad(urlBooks, ProcessResponse);
         }
 

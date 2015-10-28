@@ -68,14 +68,14 @@ namespace HubsApp
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f060002
-			public const int padding_large = 2131099650;
+			// aapt resource value: 0x7f050002
+			public const int padding_large = 2131034114;
 			
-			// aapt resource value: 0x7f060001
-			public const int padding_medium = 2131099649;
+			// aapt resource value: 0x7f050001
+			public const int padding_medium = 2131034113;
 			
-			// aapt resource value: 0x7f060000
-			public const int padding_small = 2131099648;
+			// aapt resource value: 0x7f050000
+			public const int padding_small = 2131034112;
 			
 			static Dimension()
 			{
@@ -321,32 +321,32 @@ namespace HubsApp
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050008
-			public const int Alipay = 2131034120;
+			// aapt resource value: 0x7f060008
+			public const int Alipay = 2131099656;
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int ApplicationName = 2131099649;
 			
-			// aapt resource value: 0x7f050006
-			public const int DistanceFormat = 2131034118;
+			// aapt resource value: 0x7f060006
+			public const int DistanceFormat = 2131099654;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int Hello = 2131099648;
 			
-			// aapt resource value: 0x7f050005
-			public const int HotelDetails = 2131034117;
+			// aapt resource value: 0x7f060005
+			public const int HotelDetails = 2131099653;
 			
-			// aapt resource value: 0x7f050002
-			public const int HotelName = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int HotelName = 2131099650;
 			
-			// aapt resource value: 0x7f050003
-			public const int HotelPosition = 2131034115;
+			// aapt resource value: 0x7f060003
+			public const int HotelPosition = 2131099651;
 			
-			// aapt resource value: 0x7f050004
-			public const int Reserve = 2131034116;
+			// aapt resource value: 0x7f060004
+			public const int Reserve = 2131099652;
 			
-			// aapt resource value: 0x7f050007
-			public const int TecentPay = 2131034119;
+			// aapt resource value: 0x7f060007
+			public const int TecentPay = 2131099655;
 			
 			static String()
 			{
@@ -366,9 +366,6 @@ namespace HubsApp
 			
 			// aapt resource value: 0x7f070000
 			public const int AppTheme = 2131165184;
-			
-			// aapt resource value: 0x7f070003
-			public const int Mono_Android_Theme_Splash = 2131165187;
 			
 			// aapt resource value: 0x7f070002
 			public const int MyDialogStyleBottom = 2131165186;
