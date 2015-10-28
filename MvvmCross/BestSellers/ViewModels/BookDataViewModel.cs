@@ -41,10 +41,7 @@ namespace BestSellers.ViewModels
             }
         }
 
-        public string AmazonImageUrl
-        {
-            get { return string.Format("http://images.amazon.com/images/P/{0}.01.ZTZZZZZZ.jpg", ISBN10); }
-        }
+        public string AmazonImageUrl => $"http://images.amazon.com/images/P/{ISBN10}.01.ZTZZZZZZ.jpg";
 
         public override string ToString()
         {

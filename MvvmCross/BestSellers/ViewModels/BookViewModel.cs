@@ -32,7 +32,7 @@ namespace BestSellers.ViewModels
         private void AsyncFindBook(string category, string bookId)
         {
             string urlBooks =
-                "http://api.nytimes.com/svc/books/v2/lists.xml?list={0}&isbn={1}&api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
+                "http://192.168.1.87/svc/books/v2/lists.xml?list={0}&isbn={1}&api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
 
             urlBooks = String.Format(urlBooks, category.Replace(" ", "-"), bookId);
             GeneralAsyncLoad(urlBooks, ProcessResponse);

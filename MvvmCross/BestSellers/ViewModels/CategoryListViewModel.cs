@@ -10,7 +10,7 @@ namespace BestSellers.ViewModels
 {
     public class CategoryListViewModel : BaseViewModel
     {
-        const string URL_CATEGORIES = "http://api.nytimes.com/svc/books/v2/lists/names.xml?api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
+        const string URL_CATEGORIES = "http://192.168.1.87/svc/books/v2/lists/names.xml?api-key=d8ad3be01d98001865e96ee55c1044db:8:57889697";
 
         private List<CategoryDataViewModel> _list;
         public List<CategoryDataViewModel> List
