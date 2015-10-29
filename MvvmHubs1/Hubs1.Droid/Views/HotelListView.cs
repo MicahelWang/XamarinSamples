@@ -1,25 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+ï»¿using Android.App;
 using Cirrious.MvvmCross.Droid.Views;
 using Hubs1.Core.ViewModels;
 
 namespace Hubs1.Droid.Views
 {
-    [Activity(Label = "¸½½üµÄ¾Æµê")]
+    [Activity(Label = "é™„è¿‘çš„é…’åº—")]
     public class HotelListView : MvxActivity
     {
         public new HotelListViewModel ViewModel
         {
-            get { return (HotelListViewModel) base.ViewModel; }
+            get { return (HotelListViewModel)base.ViewModel; }
             set { base.ViewModel = value; }
         }
 

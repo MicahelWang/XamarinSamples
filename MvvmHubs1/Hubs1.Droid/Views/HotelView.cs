@@ -1,25 +1,23 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using System.Collections.Generic;
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using Cirrious.MvvmCross.Droid.Views;
+using Hubs1.Core.ViewModels;
 
 namespace Hubs1.Droid.Views
 {
-    [Activity(Label = "HotelView")]
-    public class HotelView : Activity
+    [Activity(Label = "酒店信息")]
+    public class HotelView : MvxActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        public new HotelViewModel ViewModel
         {
-            base.OnCreate(savedInstanceState);
+            get { return (HotelViewModel)base.ViewModel; }
+            set { base.ViewModel = value; }
+        }
 
-            // Create your application here
+        protected override void OnViewModelSet()
+        {
+            SetContentView(Resource.Layout.HotelView);
+            var list = new List<string>();
         }
     }
 }

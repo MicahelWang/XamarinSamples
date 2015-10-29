@@ -8,7 +8,7 @@ using Cirrious.MvvmCross.ViewModels;
 
 namespace Hubs1.Core.ViewModels
 {
-    public class HotelDataViewModel : BaseViewModel
+    public class HotelDataModel : BaseViewModel
     {
         private double R = 6371229;
         public string Name { get; set; }
