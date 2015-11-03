@@ -69,13 +69,19 @@ namespace Hubs1.Droid
 			public const int dialog_expander_ic_minimized = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int dot = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int monoandroidsplash = 2130837507;
+			public const int Icon = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int splash = 2130837508;
+			public const int location = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int monoandroidsplash = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int splash = 2130837510;
 			
 			static Drawable()
 			{

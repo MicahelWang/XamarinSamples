@@ -8,11 +8,11 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-        <ProgressBar
+    <!--<ProgressBar
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            local:MvxBind="Visibility IsLoading,Converter=Visibility" />
+            local:MvxBind="Visibility IsLoading,Converter=Visibility" />-->
         <RelativeLayout
             android:paddingTop="2dip"
             android:paddingBottom="2dip"
