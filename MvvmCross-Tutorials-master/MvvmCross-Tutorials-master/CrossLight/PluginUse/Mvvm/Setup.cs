@@ -1,50 +1,24 @@
 using Android.Content;
-using Android.Views;
-using Cirrious.CrossCore.Core;
-using Cirrious.CrossCore.Droid;
-using Cirrious.CrossCore.Droid.Platform;
-using Cirrious.CrossCore.IoC;
 using Cirrious.CrossCore.Platform;
-using Cirrious.CrossCore.Plugins;
-using Cirrious.MvvmCross.Binding.Droid;
-using Cirrious.MvvmCross.Binding.Droid.Binders.ViewTypeResolvers;
-using Mvvm.Framework;
+using Cirrious.MvvmCross.Droid.Platform;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace Mvvm
 {
-    public class Setup
+    public class Setup : MvxAndroidSetup
     {
-        public static readonly Setup Instance = new Setup();
-
-        private Setup()
-        {            
+        public Setup(Context applicationContext) : base(applicationContext)
+        {
         }
 
-        public void EnsureInitialized(Context applicationContext)
+        protected override IMvxApplication CreateApp()
         {
-            if (MvxSimpleIoCContainer.Instance != null)
-                return;
-
-            var ioc = MvxSimpleIoCContainer.Initialize();
-
-            ioc.RegisterSingleton<IMvxPluginManager>(new MvxFilePluginManager(".Droid", ".dll"));
-
-            ioc.RegisterSingleton<IMvxAndroidGlobals>(new AndroidGlobals(applicationContext, GetType().Namespace));
-
-            var topActivity = new AndroidTopActivity();
-            ioc.RegisterSingleton<ITopActivity>(topActivity);
-            ioc.RegisterSingleton<IMvxMainThreadDispatcher>(topActivity);
-
-            var builder = new MvxAndroidBindingBuilder();
-            builder.DoRegistration();
-
-            var viewCache = ioc.Resolve<IMvxTypeCache<View>>();
-            viewCache.AddAssembly(typeof(View).Assembly);
-
-            var namespaces = ioc.Resolve<IMvxNamespaceListViewTypeResolver>();
-            namespaces.Add("Android.Views");
-            namespaces.Add("Android.Widget");
-            namespaces.Add("Android.Webkit");
+            return new Core.App();
+        }
+		
+        protected override IMvxTrace CreateDebugTrace()
+        {
+            return new DebugTrace();
         }
     }
 }

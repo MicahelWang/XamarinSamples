@@ -1,25 +1,24 @@
 using Android.Content;
-using Cirrious.CrossCore.Droid;
-using Cirrious.CrossCore.IoC;
 using Cirrious.CrossCore.Platform;
-using Cirrious.CrossCore.Plugins;
+using Cirrious.MvvmCross.Droid.Platform;
+using Cirrious.MvvmCross.ViewModels;
 
 namespace NoMvvm
 {
-    public class Setup
+    public class Setup : MvxAndroidSetup
     {
-        public static readonly Setup Instance = new Setup();
-
-        public void EnsureInitialized(Context applicationContext)
+        public Setup(Context applicationContext) : base(applicationContext)
         {
-            if (MvxSimpleIoCContainer.Instance != null)
-                return;
+        }
 
-            var ioc = MvxSimpleIoCContainer.Initialize();
-
-            ioc.RegisterSingleton<IMvxPluginManager>(new MvxFilePluginManager(".Droid", ".dll"));
-	
-			ioc.RegisterSingleton<IMvxAndroidGlobals>(new AndroidGlobals(applicationContext, GetType().Namespace));
-		}
+        protected override IMvxApplication CreateApp()
+        {
+            return new Core.App();
+        }
+		
+        protected override IMvxTrace CreateDebugTrace()
+        {
+            return new DebugTrace();
+        }
     }
 }

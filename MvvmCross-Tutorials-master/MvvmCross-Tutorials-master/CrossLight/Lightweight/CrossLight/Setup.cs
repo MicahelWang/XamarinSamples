@@ -3,7 +3,7 @@ using Cirrious.CrossCore.Platform;
 using Cirrious.MvvmCross.Droid.Platform;
 using Cirrious.MvvmCross.ViewModels;
 
-namespace NoBinding
+namespace CrossLight
 {
     public class Setup : MvxAndroidSetup
     {
