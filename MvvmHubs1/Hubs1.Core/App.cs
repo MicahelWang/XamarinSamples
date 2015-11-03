@@ -51,6 +51,7 @@ namespace Hubs1.Core
     {
         public App()
         {
+
             RegisterAppStart<HotelListViewModel>();
 
             var errorApplicationObject = new ErrorApplicationObject();

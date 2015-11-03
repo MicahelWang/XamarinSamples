@@ -1,5 +1,7 @@
 ﻿using Android.App;
+using Android.OS;
 using Cirrious.MvvmCross.Droid.Views;
+using Com.Baidu.Mapapi;
 using Hubs1.Core.ViewModels;
 
 namespace Hubs1.Droid.Views
@@ -16,6 +18,11 @@ namespace Hubs1.Droid.Views
         protected override void OnViewModelSet()
         {
             SetContentView(Resource.Layout.HotelListView);
+        }
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SDKInitializer.Initialize(ApplicationContext);
         }
     }
 }
