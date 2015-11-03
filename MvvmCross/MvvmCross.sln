@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestSellers", "BestSellers\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestSellers.Droid", "BestSellers.Droid\BestSellers.Droid.csproj", "{5EA32F8E-DF20-47E9-B912-C0B97C2ADC12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Core", "CustomerManagement.Core\CustomerManagement.Core.csproj", "{4E18F06B-DA22-47C6-AD6A-3C5D453413C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManagement.Droid", "CustomerManagement.Droid\CustomerManagement.Droid.csproj", "{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,16 @@ Global
 		{5EA32F8E-DF20-47E9-B912-C0B97C2ADC12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EA32F8E-DF20-47E9-B912-C0B97C2ADC12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5EA32F8E-DF20-47E9-B912-C0B97C2ADC12}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4E18F06B-DA22-47C6-AD6A-3C5D453413C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E18F06B-DA22-47C6-AD6A-3C5D453413C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E18F06B-DA22-47C6-AD6A-3C5D453413C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E18F06B-DA22-47C6-AD6A-3C5D453413C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0AF78EF-03BA-4D94-94CB-ECCFFAA2E299}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
