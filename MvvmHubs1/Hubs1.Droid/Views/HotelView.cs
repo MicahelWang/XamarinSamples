@@ -2,6 +2,7 @@
 using Android.App;
 using Android.OS;
 using Android.Runtime;
+using Android.Widget;
 using Cirrious.MvvmCross.Droid.Views;
 using Com.Baidu.Mapapi.Map;
 using Com.Baidu.Mapapi.Model;
@@ -10,7 +11,7 @@ using Hubs1.Core.ViewModels;
 namespace Hubs1.Droid.Views
 {
     [Activity(Label = "酒店信息")]
-    public class HotelView : MvxActivity
+    public class HotelView : MvxActivity, IMenuItemClickListener
     {
         private readonly BitmapDescriptor _hotelBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.dot);
         private readonly BitmapDescriptor _localtionBitmap = BitmapDescriptorFactory.FromResource(Resource.Drawable.location);
@@ -25,6 +26,19 @@ namespace Hubs1.Droid.Views
         {
             SetContentView(Resource.Layout.HotelView);
             //InitOverlay();
+            Button btn6 = FindViewById<Button>(Resource.Id.btnIOS6);
+            Button btn7 = FindViewById<Button>(Resource.Id.btnIOS7);
+
+            btn6.Click += delegate
+            {
+                SetTheme(Resource.Style.ActionSheetStyleIOS6);
+                ShowActionSheet();
+            };
+            btn7.Click += delegate
+            {
+                SetTheme(Resource.Style.ActionSheetStyleIOS7);
+                ShowActionSheet();
+            };
         }
 
       
@@ -62,6 +76,20 @@ namespace Hubs1.Droid.Views
 
         }
 
+        public void ShowActionSheet()
+        {
+            var menuView = new ActionSheet(this);
+            menuView.SetCancelButtonTitle("取消");// before add items
+            menuView.AddItems(new []{ "支付宝", "微信", "财付通", "银联" });
+            menuView.SetItemClickListener(this);
+            menuView.SetCancelableOnTouchMenuOutside(true);
+            menuView.ShowMenu();
+        }
 
+     
+        public void OnItemClick(int itemPosition)
+        {
+            Toast.MakeText(this, (itemPosition + 1) + " click", 0).Show();
+        }
     }
 }

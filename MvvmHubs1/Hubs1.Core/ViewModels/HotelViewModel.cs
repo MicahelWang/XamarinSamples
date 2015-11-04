@@ -18,9 +18,29 @@
             }
         }
 
+        public string TxtBtnIos6 => "IOS6 Style";
+        public string TxtBtnIos7 => "IOS7 Style";
+
         public void Init(HotelDataModel hotelData)
         {
             HotelData = hotelData;
         }
+
+        //public ICommand ShowIos6StyleCommand
+        //{
+        //    get
+        //    {
+        //        return new MvxCommand(() =>
+        //  {
+
+
+        //  });
+        //    }
+        //}
+
+        //public ICommand ShowIos7StyleCommand
+        //{
+        //    get { return new MvxCommand(() => ShowViewModel<HotelViewModel>(this)); }
+        //}
     }
 }

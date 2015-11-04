@@ -31,23 +31,62 @@ namespace Hubs1.Droid
 		public partial class Attribute
 		{
 			
-			// aapt resource value: 0x7f010000
-			public const int MvxBind = 2130771968;
+			// aapt resource value: 0x7f01000d
+			public const int MvxBind = 2130771981;
 			
-			// aapt resource value: 0x7f010004
-			public const int MvxDropDownItemTemplate = 2130771972;
+			// aapt resource value: 0x7f010011
+			public const int MvxDropDownItemTemplate = 2130771985;
 			
-			// aapt resource value: 0x7f010003
-			public const int MvxItemTemplate = 2130771971;
+			// aapt resource value: 0x7f010010
+			public const int MvxItemTemplate = 2130771984;
+			
+			// aapt resource value: 0x7f01000e
+			public const int MvxLang = 2130771982;
+			
+			// aapt resource value: 0x7f010012
+			public const int MvxSource = 2130771986;
+			
+			// aapt resource value: 0x7f01000f
+			public const int MvxTemplate = 2130771983;
 			
 			// aapt resource value: 0x7f010001
-			public const int MvxLang = 2130771969;
+			public const int actionSheetBackground = 2130771969;
 			
-			// aapt resource value: 0x7f010005
-			public const int MvxSource = 2130771973;
+			// aapt resource value: 0x7f010009
+			public const int actionSheetPadding = 2130771977;
+			
+			// aapt resource value: 0x7f010000
+			public const int actionSheetStyle = 2130771968;
+			
+			// aapt resource value: 0x7f01000c
+			public const int actionSheetTextSize = 2130771980;
 			
 			// aapt resource value: 0x7f010002
-			public const int MvxTemplate = 2130771970;
+			public const int cancelButtonBackground = 2130771970;
+			
+			// aapt resource value: 0x7f01000b
+			public const int cancelButtonMarginTop = 2130771979;
+			
+			// aapt resource value: 0x7f010007
+			public const int cancelButtonTextColor = 2130771975;
+			
+			// aapt resource value: 0x7f010005
+			public const int otherButtonBottomBackground = 2130771973;
+			
+			// aapt resource value: 0x7f010004
+			public const int otherButtonMiddleBackground = 2130771972;
+			
+			// aapt resource value: 0x7f010006
+			public const int otherButtonSingleBackground = 2130771974;
+			
+			// aapt resource value: 0x7f01000a
+			public const int otherButtonSpacing = 2130771978;
+			
+			// aapt resource value: 0x7f010008
+			public const int otherButtonTextColor = 2130771976;
+			
+			// aapt resource value: 0x7f010003
+			public const int otherButtonTopBackground = 2130771971;
 			
 			static Attribute()
 			{
@@ -55,6 +94,25 @@ namespace Hubs1.Droid
 			}
 			
 			private Attribute()
+			{
+			}
+		}
+		
+		public partial class Dimension
+		{
+			
+			// aapt resource value: 0x7f050000
+			public const int activity_horizontal_margin = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int activity_vertical_margin = 2131034113;
+			
+			static Dimension()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Dimension()
 			{
 			}
 		}
@@ -96,26 +154,32 @@ namespace Hubs1.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int BookImageView = 2130968578;
+			// aapt resource value: 0x7f070002
+			public const int BookImageView = 2131165186;
 			
-			// aapt resource value: 0x7f040000
-			public const int MvxBindingTagUnique = 2130968576;
+			// aapt resource value: 0x7f070000
+			public const int MvxBindingTagUnique = 2131165184;
 			
-			// aapt resource value: 0x7f040006
-			public const int bmapView = 2130968582;
+			// aapt resource value: 0x7f070008
+			public const int bmapView = 2131165192;
 			
-			// aapt resource value: 0x7f040001
-			public const int linearLayout1 = 2130968577;
+			// aapt resource value: 0x7f070006
+			public const int btnIOS6 = 2131165190;
 			
-			// aapt resource value: 0x7f040003
-			public const int text1 = 2130968579;
+			// aapt resource value: 0x7f070007
+			public const int btnIOS7 = 2131165191;
 			
-			// aapt resource value: 0x7f040004
-			public const int text2 = 2130968580;
+			// aapt resource value: 0x7f070001
+			public const int linearLayout1 = 2131165185;
 			
-			// aapt resource value: 0x7f040005
-			public const int text3 = 2130968581;
+			// aapt resource value: 0x7f070003
+			public const int text1 = 2131165187;
+			
+			// aapt resource value: 0x7f070004
+			public const int text2 = 2131165188;
+			
+			// aapt resource value: 0x7f070005
+			public const int text3 = 2131165189;
 			
 			static Id()
 			{
@@ -158,11 +222,20 @@ namespace Hubs1.Droid
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int ApplicationName = 2131034113;
+			// aapt resource value: 0x7f060004
+			public const int ApplicationName = 2131099652;
 			
-			// aapt resource value: 0x7f050000
-			public const int Hello = 2131034112;
+			// aapt resource value: 0x7f060003
+			public const int Hello = 2131099651;
+			
+			// aapt resource value: 0x7f060002
+			public const int action_settings = 2131099650;
+			
+			// aapt resource value: 0x7f060000
+			public const int app_name = 2131099648;
+			
+			// aapt resource value: 0x7f060001
+			public const int hello_world = 2131099649;
 			
 			static String()
 			{
@@ -177,8 +250,20 @@ namespace Hubs1.Droid
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Mono_Android_Theme_Splash = 2131099648;
+			// aapt resource value: 0x7f040000
+			public const int ActionSheetStyleIOS6 = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int ActionSheetStyleIOS7 = 2130968577;
+			
+			// aapt resource value: 0x7f040002
+			public const int AppBaseTheme = 2130968578;
+			
+			// aapt resource value: 0x7f040003
+			public const int AppTheme = 2130968579;
+			
+			// aapt resource value: 0x7f040004
+			public const int Mono_Android_Theme_Splash = 2130968580;
 			
 			static Style()
 			{
@@ -193,9 +278,65 @@ namespace Hubs1.Droid
 		public partial class Styleable
 		{
 			
+			public static int[] ActionSheet = new int[] {
+					2130771969,
+					2130771970,
+					2130771971,
+					2130771972,
+					2130771973,
+					2130771974,
+					2130771975,
+					2130771976,
+					2130771977,
+					2130771978,
+					2130771979,
+					2130771980};
+			
+			// aapt resource value: 0
+			public const int ActionSheet_actionSheetBackground = 0;
+			
+			// aapt resource value: 8
+			public const int ActionSheet_actionSheetPadding = 8;
+			
+			// aapt resource value: 11
+			public const int ActionSheet_actionSheetTextSize = 11;
+			
+			// aapt resource value: 1
+			public const int ActionSheet_cancelButtonBackground = 1;
+			
+			// aapt resource value: 10
+			public const int ActionSheet_cancelButtonMarginTop = 10;
+			
+			// aapt resource value: 6
+			public const int ActionSheet_cancelButtonTextColor = 6;
+			
+			// aapt resource value: 4
+			public const int ActionSheet_otherButtonBottomBackground = 4;
+			
+			// aapt resource value: 3
+			public const int ActionSheet_otherButtonMiddleBackground = 3;
+			
+			// aapt resource value: 5
+			public const int ActionSheet_otherButtonSingleBackground = 5;
+			
+			// aapt resource value: 9
+			public const int ActionSheet_otherButtonSpacing = 9;
+			
+			// aapt resource value: 7
+			public const int ActionSheet_otherButtonTextColor = 7;
+			
+			// aapt resource value: 2
+			public const int ActionSheet_otherButtonTopBackground = 2;
+			
+			public static int[] ActionSheets = new int[] {
+					2130771968};
+			
+			// aapt resource value: 0
+			public const int ActionSheets_actionSheetStyle = 0;
+			
 			public static int[] MvxBinding = new int[] {
-					2130771968,
-					2130771969};
+					2130771981,
+					2130771982};
 			
 			// aapt resource value: 0
 			public const int MvxBinding_MvxBind = 0;
@@ -204,20 +345,20 @@ namespace Hubs1.Droid
 			public const int MvxBinding_MvxLang = 1;
 			
 			public static int[] MvxControl = new int[] {
-					2130771970};
+					2130771983};
 			
 			// aapt resource value: 0
 			public const int MvxControl_MvxTemplate = 0;
 			
 			public static int[] MvxImageView = new int[] {
-					2130771973};
+					2130771986};
 			
 			// aapt resource value: 0
 			public const int MvxImageView_MvxSource = 0;
 			
 			public static int[] MvxListView = new int[] {
-					2130771971,
-					2130771972};
+					2130771984,
+					2130771985};
 			
 			// aapt resource value: 1
 			public const int MvxListView_MvxDropDownItemTemplate = 1;

@@ -50,6 +50,22 @@
                 android:layout_toRightOf="@id/BookImageView"
                 local:MvxBind="Text  HotelData.Latitude"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
+            <Button
+                android:id="@+id/btnIOS6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text2"
+                android:layout_toRightOf="@id/BookImageView"
+                local:MvxBind="Text  TxtBtnIos6"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+            <Button
+                android:id="@+id/btnIOS7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnIOS6"
+                android:layout_toRightOf="@id/BookImageView"
+                local:MvxBind="Text  TxtBtnIos7"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
         </RelativeLayout>
     </FrameLayout>
     <com.baidu.mapapi.map.MapView
